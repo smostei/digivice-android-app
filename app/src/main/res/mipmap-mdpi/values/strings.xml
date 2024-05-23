@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Digivice</string>
+    <string name="app_name">digimon-app</string>
 
     <string name="generic_error_message">Ocurrió un error</string>
     <string name="error_state_description">Error de conexión</string>
@@ -9,7 +9,7 @@
     <string name="login_error_message">Se deben ingresar ambos campos</string>
     <string name="home_welcome_message">¡Bienvenido %1$s!</string>
     <string name="digimon_detail_level">Nivel: %1$s</string>
-    <string name="order_message">Digimons ordenados por %1$s</string>
+    <string name="order_message">Digimons ordenados por nivel %1$s</string>
 
     <!--Login failure-->
     <string name="failure_hint">Error en los datos</string>
@@ -29,4 +29,5 @@
         <item>Mega</item>
         <item>Armor</item>
     </string-array>
+
 </resources>
