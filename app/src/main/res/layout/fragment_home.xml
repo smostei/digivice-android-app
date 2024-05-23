@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".framework.presentation.home.view.HomeFragment">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/container_items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:constraint_referenced_ids="
+        digimon_list,
+        home_toolbar,
+        search_view,
+        level_spinner"
+        tools:visibility="visible"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/home_toolbar"
+        android:layout_width="@dimen/neutral"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/search_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:fontFamily="sans-serif-thin"
+        android:layout_width="@dimen/neutral"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/level_spinner"
+        app:layout_constraintTop_toBottomOf="@id/home_toolbar"
+        app:layout_constraintBottom_toTopOf="@id/digimon_list"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/level_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/search_view"
+        app:layout_constraintTop_toBottomOf="@id/home_toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/search_view"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/digimon_list"
+        android:layout_width="@dimen/neutral"
+        android:layout_height="@dimen/neutral"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
+        tools:listitem="@layout/adapter_digimon_overview"
+        android:clipToPadding="false"
+        android:paddingBottom="32dp"/>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/error_state_image"
+        android:layout_width="@dimen/neutral"
+        android:layout_height="@dimen/error_state_icon_height"
+        app:srcCompat="@drawable/ic_tk_patamon_crying"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/error_state_description"
+        android:layout_width="@dimen/neutral"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/error_state_image"
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:text="@string/error_state_description"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="bold"
+        android:textSize="24sp" />
+
+    <View
+        android:id="@+id/translucent_view"
+        android:layout_width="@dimen/neutral"
+        android:layout_height="@dimen/gradient_height"
+        android:background="@drawable/background_translucent_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
